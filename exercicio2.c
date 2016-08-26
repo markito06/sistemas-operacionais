@@ -5,8 +5,9 @@ int main(int argc, char **argv)
 {
 	int processoPai = getpid();
 	int count = 0;
+	int quantidadeDeFilhos = 4;
 
-	while(getpid() == processoPai && count < 4 ){
+	while(getpid() == processoPai && count < quantidadeDeFilhos ){
 		count ++;
 		pid_t processoFilho = fork();
 
@@ -16,8 +17,11 @@ int main(int argc, char **argv)
 		}else{
 			printf("O processoFilho [ %d ] \n", getpid());	
 		}
-				
+		
+
 	}
+
+
 
 	return 0;
 }
